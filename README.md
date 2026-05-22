@@ -62,10 +62,17 @@ rewards in HoverAviary, motivating MAPPO for multi-agent setting.
 
 ### Key Research Findings
 
-1. **Curriculum transitions cause regression** — when Stage 0
-   advanced to Stage 1, distance jumped from 0.044 → 0.075
-   (goalposts moved). Recovered to 0.052 over 250 updates.
-   Reproduces Bengio et al. (2009) curriculum jump phenomenon.
+1. ### Curriculum Threshold Sensitivity
+| Threshold | Result |
+|-----------|--------|
+| Too strict (0.04) | Never advances beyond Stage 1 |
+| Too generous (0.09) | Advances fast, fails at Stage 3 |
+| Balanced (0.055) | Currently training... |
+
+### Key Insight
+Threshold design is as important as algorithm design in 
+curriculum learning. Automated threshold scheduling 
+(e.g. based on learning rate) is a direction for future work.
 
 2. **Survival vs navigation tradeoff** — without curriculum,
    drones learn to hover (safe) rather than navigate (risky).

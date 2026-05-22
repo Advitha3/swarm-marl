@@ -24,19 +24,19 @@ class CurriculumFormationEnv:
         {
             'name': 'Stable Hover',
             'scale': 0.00,
-            'threshold': 0.08,    # generous
+            'threshold': 0.06,
             'description': 'Learn to hover without crashing'
         },
         {
             'name': 'Tiny Move',
             'scale': 0.05,
-            'threshold': 0.09,    # just above current dist of 0.075-0.086
+            'threshold': 0.055,
             'description': 'Move 5cm to target'
         },
         {
             'name': 'Small Move',
             'scale': 0.15,
-            'threshold': 0.18,
+            'threshold': 0.13,
             'description': 'Move 15cm to target'
         },
         {
