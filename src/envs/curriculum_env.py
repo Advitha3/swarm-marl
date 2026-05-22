@@ -23,26 +23,26 @@ class CurriculumFormationEnv:
     STAGES = [
         {
             'name': 'Stable Hover',
-            'scale': 0.00,   # targets AT current position
-            'threshold': 0.05,  # advance when mean_dist < 5cm
+            'scale': 0.00,
+            'threshold': 0.08,    # generous
             'description': 'Learn to hover without crashing'
         },
         {
             'name': 'Tiny Move',
-            'scale': 0.05,   # targets 5cm away
-            'threshold': 0.04,
+            'scale': 0.05,
+            'threshold': 0.09,    # just above current dist of 0.075-0.086
             'description': 'Move 5cm to target'
         },
         {
             'name': 'Small Move',
-            'scale': 0.15,   # targets 15cm away
-            'threshold': 0.10,
+            'scale': 0.15,
+            'threshold': 0.18,
             'description': 'Move 15cm to target'
         },
         {
             'name': 'Full Formation',
-            'scale': 0.30,   # targets 30cm away
-            'threshold': 0.15,
+            'scale': 0.30,
+            'threshold': 0.25,
             'description': 'Reach full formation targets'
         },
     ]
