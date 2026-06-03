@@ -46,10 +46,10 @@ No communication needed between drones
 ## Curriculum Learning Pipeline
 
 Standard MAPPO with fixed targets failed — drones learned to hover in place rather than navigate (distance stuck at 0.544m). Curriculum learning solved this:
-Stage 0: Stable Hover     ✅ Mastered in 3 updates
-Stage 1: Move 5cm         ✅ Mastered in ~38 updates
-Stage 2: Move 15cm        ✅ Mastered in ~49 updates
-Stage 3: Full Formation   ✅ Learning — dist 0.314 → 0.229m
+Stage 0: Stable Hover     Mastered in 3 updates
+Stage 1: Move 5cm         Mastered in ~38 updates
+Stage 2: Move 15cm        Mastered in ~49 updates
+Stage 3: Full Formation   Learning — dist 0.314 → 0.229m
 
 Each stage automatically advances when mean distance stays below threshold for 3 consecutive updates.
 
@@ -72,8 +72,8 @@ Each stage automatically advances when mean distance stays below threshold for 3
 
 | Experiment | Method | Distance | Outcome |
 |-----------|--------|----------|---------|
-| Baseline | Fixed targets | 0.544m stuck | ❌ No navigation |
-| Ours | Curriculum MAPPO | 0.314 → 0.229m | ✅ Formation learned |
+| Baseline | Fixed targets | 0.544m stuck |  No navigation |
+| Ours | Curriculum MAPPO | 0.314 → 0.229m |  Formation learned |
 
 ---
 

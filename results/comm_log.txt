@@ -1,0 +1,61 @@
+pybullet build time: Jan 29 2025 23:16:28
+MAPPO with Communication — 4 Drone Formation
+==================================================
+[INFO] BaseAviary.__init__() loaded parameters from the drone's .urdf:
+[INFO] m 0.027000, L 0.039700,
+[INFO] ixx 0.000014, iyy 0.000014, izz 0.000022,
+[INFO] kf 3.160000e-10, km 7.940000e-12,
+[INFO] t2w 2.250000, max_speed_kmh 30.000000,
+[INFO] gnd_eff_coeff 11.368590, prop_radius 0.023135,
+[INFO] drag_xy_coeff 0.000001, drag_z_coeff 0.000001,
+[INFO] dw_coeff_1 2267.180000, dw_coeff_2 0.160000, dw_coeff_3 -0.110000
+/home/advitha/swarm-rl/lib/python3.10/site-packages/gymnasium/spaces/box.py:236: UserWarning: [33mWARN: Box low's precision lowered by casting to float32, current low.dtype=float64[0m
+  gym.logger.warn(
+/home/advitha/swarm-rl/lib/python3.10/site-packages/gymnasium/spaces/box.py:306: UserWarning: [33mWARN: Box high's precision lowered by casting to float32, current high.dtype=float64[0m
+  gym.logger.warn(
+Starting Stage 0: Stable Hover
+  → Learn to hover without crashing
+Policy parameters:  18264
+Critic parameters:  63361
+Policy input dim:   123
+Critic input dim:   364
+
+  Update       Reward   MeanDist  Stage   Episodes
+-------------------------------------------------------
+  ✓ Success 1/2 (dist=0.014 < 0.06)
+       1      212.245      0.014      0        177
+  ✓ Success 2/2 (dist=0.014 < 0.06)
+
+==================================================
+ADVANCING TO STAGE 1: Tiny Move
+  → Move 5cm to target
+  → Target distance: 5cm
+==================================================
+
+       2      213.231      0.014      0        175
+  ✓ Success 1/2 (dist=0.054 < 0.075)
+       3      206.323      0.054      1        176
+  ✓ Success 2/2 (dist=0.054 < 0.075)
+
+==================================================
+ADVANCING TO STAGE 2: Small Move
+  → Move 15cm to target
+  → Target distance: 15cm
+==================================================
+
+       4      207.854      0.054      1        175
+  ✓ Success 1/2 (dist=0.152 < 0.18)
+       5      218.567      0.152      2        168
+  ✓ Success 2/2 (dist=0.152 < 0.18)
+
+==================================================
+ADVANCING TO STAGE 3: Full Formation
+  → Reach full formation targets
+  → Target distance: 30cm
+==================================================
+
+       6      213.248      0.152      2        173
+       7      -11.033      0.301      3        170
+       8      -11.362      0.301      3        170
+       9      -12.476      0.301      3        167
+      10      -10.651      0.301      3        174
