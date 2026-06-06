@@ -183,15 +183,22 @@ class CurriculumFormationEnv:
             # Distance reward — amplified
             reward_i = -distance * 2.0
 
-            # Arrival bonus
+            # Arrival bonus — big reward for reaching target
             stage_threshold = self.STAGES[self.current_stage]['threshold']
             if distance < stage_threshold:
-                reward_i += 20.0
+                reward_i += 50.0   # increased from 20 to 50
 
-            # Progress reward — reward moving closer this step
+            # Progress reward — reward moving CLOSER this step
             if self.prev_distances is not None:
                 progress = self.prev_distances[i] - distance
-                reward_i += progress * 10.0
+                # Amplify progress reward significantly
+                reward_i += progress * 50.0   # increased from 10 to 50
+                
+                # Stagnation penalty — explicitly penalize not moving
+                # If drone moved less than 0.1mm this step, penalize
+                stage_penalty = 0.5 * (self.current_stage +1)
+                if abs(progress) < 0.0001:
+                    reward_i -= stage_penalty
 
             individual_rewards.append(reward_i)
 
